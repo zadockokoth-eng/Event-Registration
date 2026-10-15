@@ -25,3 +25,25 @@ $count = mysqli_num_rows($result);
 <table id="signup-table">
     <thead>
         <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Activity</th>
+            <th>Signed up on</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+            <tr>
+                <td><?php echo htmlspecialchars($row['student_name']); ?></td>
+                <td><?php echo htmlspecialchars($row['email']); ?></td>
+                <td><?php echo htmlspecialchars($row['title']); ?></td>
+                <td><?php echo date("d M Y, H:i", strtotime($row['signed_up_at'])); ?></td>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
+</div>
+
+<script src="script.js"></script>
+
+<?php include "footer.php"; ?>
