@@ -15,3 +15,13 @@ $sql = "SELECT signups.student_name, signups.email, signups.signed_up_at, activi
 $result = mysqli_query($conn, $sql);
 $count = mysqli_num_rows($result);
 ?>
+
+<h2>Who Joined</h2>
+<p class="subtitle"><?php echo $count; ?> students have signed up so far.</p>
+
+<input type="text" id="search-box" class="search" placeholder="Type to search by name or activity...">
+
+<div class="table-wrap">
+<table id="signup-table">
+    <thead>
+        <tr>
